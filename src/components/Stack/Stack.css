@@ -1,0 +1,24 @@
+.Parallelogram {
+    width: 50px;
+    height: 10px;
+    transform: skew(-30deg);
+    background-color: white;
+    border: 1px solid black;
+    margin: 5px 5px;
+  }
+
+  .Stack-wrapper {
+        width: 45%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .Stack {
+      
+      display: flex;
+      flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin: 20px 20px;
+  }

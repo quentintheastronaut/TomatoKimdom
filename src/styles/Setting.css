@@ -1,0 +1,20 @@
+.Module {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+}
+
+.Setting-wrapper {
+    width: 80%;
+}
+
+.Input {
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    padding: 5px 5px;
+    font-size: 15px;
+}

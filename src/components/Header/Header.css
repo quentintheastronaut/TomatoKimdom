@@ -1,0 +1,63 @@
+
+
+.Header {
+    margin: 20px 0;
+    margin-top: 40px;
+    width: 40%;
+    min-width: 400px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px) saturate(100%) contrast(45%) brightness(130%);
+    content: '';
+    animation: fadeIn 1s ease-in;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+.Logo {
+    width: 30px;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center
+}
+
+.navigation 
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

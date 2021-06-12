@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@600&display=swap');
+
+
+.Button {
+    padding: 15px 20px 10px 20px;
+    font-size: 18px;
+    background-color: #e04336;
+    border-radius: 10px;
+    /* border: 2px solid black; */
+    border: none;
+    color: white;
+    cursor: pointer;
+    line-height: 18px;
+    font-family: 'Baloo Tammudu 2', cursive;
+    margin: 5px 10px;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #740e05;
+}
+
+
+.Button:active {
+    border-bottom: none;
+}

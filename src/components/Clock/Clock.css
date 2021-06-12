@@ -1,0 +1,35 @@
+.Clock {
+    
+    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Clock-wrapper {
+    width: 300px;
+    height: 300px;
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Clock-string {
+    font-size: 20px;
+    padding: 0 0;
+    margin: 0 0;
+    line-height: 20px;
+}
+
+.Clock-time {
+    line-height: 60px;
+    font-size: 60px;
+    padding: 0 0;
+    margin: 0 0;
+}
+
