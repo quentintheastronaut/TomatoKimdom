@@ -3,6 +3,7 @@ import Clock from '../Clock/Clock'
 import './Body.css'
 // import {useSelector} from 'react-redux'
 import Stack from '../Stack/Stack'
+// import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 function Body() {
 
@@ -12,8 +13,10 @@ function Body() {
 
     return (
         <div className="Body">
-            <Clock />
-            <Stack />
+            <div className="Body-wrapper">
+                <Clock />
+                <Stack />
+            </div>     
         </div>
     )
 }

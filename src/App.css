@@ -15,10 +15,6 @@ p {
 
 .App {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: 'Baloo Tammudu 2', cursive;
 }
 

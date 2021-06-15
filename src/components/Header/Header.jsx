@@ -18,7 +18,8 @@ function Header() {
                 <div className="navigation">
                     <Button title="Login" />
                     <Button title="Setting"  path='/setting'/>
-                    <Button title="Missions" />
+                    <Button title="Missions" path='/missions'/>
+                    <Button title="Challenges"/>
                 </div>
             </div>
             

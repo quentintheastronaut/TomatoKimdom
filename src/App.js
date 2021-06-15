@@ -8,22 +8,34 @@ import {
   Route
 } from "react-router-dom"
 import Setting from './pages/Setting'
+import './styles/responsive.css'
+import Missions from './pages/Missions';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Switch>
-          <Route path="/setting">
-            <Setting />
-          </Route>
-          <Route default path="/">
-            <Body />
-          </Route>
-        </Switch>
-        <SoundCloudWidget />
-      </Router>
+      <div className="row">
+        <div className="col-6">
+        <Router>
+          <Header />
+          <Switch>
+            <Route path="/setting">
+              <Setting />
+            </Route>
+            <Route path="/missions">
+              <Missions />
+            </Route>
+            <Route default path="/">
+              <Body />
+            </Route>
+          </Switch>
+        </Router>
+        </div>
+        <div className="col-3">
+          <SoundCloudWidget />
+        </div>
+      </div>
+      
     </div>
   );
 }

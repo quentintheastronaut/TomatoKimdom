@@ -9,7 +9,6 @@ Button.propTypes = {
     onClick : PropTypes.func,
     title : PropTypes.any,
     path : PropTypes.string
-
 }
 
 Button.defaultProps = {
@@ -29,8 +28,6 @@ function Button(props) {
         }
     }
 
-
-
     return (
         
             <button className="Button" onClick={handleClick}>
@@ -46,8 +43,6 @@ function Button(props) {
             </button>
     )
 }
-
-
 
 export default Button
 

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState} from 'react'
 // import PropTypes from 'prop-types'
 import './Clock.css'
 import Button from '../Button/Button'
@@ -7,6 +7,9 @@ import {setPeriodCounter ,setState} from '../../redux/action'
 import {useDispatch} from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay , faStop, faUndo} from '@fortawesome/free-solid-svg-icons'
+import ding from '../../assets/audio/ding.mp3'
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+
 
 Clock.propTypes = {
 }
@@ -28,33 +31,17 @@ function Clock(props) {
     const interval = useSelector(state => state.longBreakInterval)
     const state = useSelector(state => state.state)
 
-    
-
     const [time, setTime] = useState(period*60)
-    const intervalRef = useRef(null);
     const [run,setRun] = useState(false);
+    const [key,setKey] = useState(0);
+
+    const audio = new Audio(ding)
+    audio.loop = false;
     
-    useEffect(()=>{
-        if(run){
-            intervalRef.current = setTimeout(()=>{
-                setTime(time => time - 1);
-            },1000)
-    
-            if(time < 0) {
-
-                // After short break 
-                setTime(period)
-                setRun(false)
-                clearTimeout(intervalRef.current);
-            }
-
-            return () => clearTimeout(intervalRef.current);
-        }
-    },[time,run,period])
-
     function handleAgain(e){
         setRun(false)
         setTime(period*60)
+        setKey(prev => prev+1)
     }
 
     function handlePlay(e){
@@ -63,12 +50,17 @@ function Clock(props) {
             setRun(false)
         }
         else {
+            
             console.log("play")
             setRun(true)
+            if(time === period*60){
+                audio.play()
+            }
+            
         }
     }
 
-    function handleNext(e){
+    function handleNext(){
         // Move to the next step:
 
         // Case 1: Current state == pomodoro && counter < 3 => current state == short
@@ -78,6 +70,7 @@ function Clock(props) {
 
             setTime(short*60)
             setRun(false)
+            audio.play()
         }
         // Case 2: Current state == pomodoro && counter == 3 => current state == long
         else if(state === 'pomodoro' && counter >= interval-1){
@@ -86,6 +79,7 @@ function Clock(props) {
 
             setTime(long*60)
             setRun(false)
+            audio.play()
         }
         // Case 3: Current state == short => current state = pomodoro
         else if(state === 'short'){
@@ -93,28 +87,54 @@ function Clock(props) {
 
             setTime(period*60)
             setRun(false)
+            audio.play()
         }
         // Case 4: Current state == long => reset counter
         else if(state === 'long'){
             dispatch(setState('pomodoro'))
             dispatch(setPeriodCounter(0))
-
             setTime(period*60)
             setRun(false)
+            audio.play()
         }
+        
+        setKey(prev => prev+1)
+
+        return [true,1000]
     } 
 
+    console.log(time, state,run)
     return (
         <div className="Clock">
             <div className="Clock-wrapper">
-                <p className="Clock-time">{formatTime(time)}</p>
-                <p className="Clock-string">seconds</p>
+                <CountdownCircleTimer
+                    key={key}
+                    size="300"
+                    isPlaying={run}
+                    duration={time}
+                    initialRemainingTime={time}
+                    colors={[
+                    ['#004777', 0.33],
+                    ['#F7B801', 0.33],
+                    ['#A30000', 0.33],
+                    ]}
+                    onComplete={(totalElapsedTime) => {
+                        return handleNext()
+                    }}
+                >
+                    {({ remainingTime }) => {
+                        return (<div className="timer">
+                            <div className="value">{formatTime(remainingTime)}</div>
+                            <div className="text">seconds</div>
+                        </div>)    
+                    }}
+                </CountdownCircleTimer>
             </div>
 
             <div className="navigation">
                     <Button title={<FontAwesomeIcon icon={faUndo}/>} onClick={handleAgain}/>
                     <Button title={time === period*60 || run === false ? <FontAwesomeIcon icon={faPlay}/> :<FontAwesomeIcon icon={faStop}/>} onClick={handlePlay}/>
-                    <Button title="Next" onClick={handleNext}/>
+                    <Button title="Next" onClick={()=>handleNext()}/>
                 </div>
         </div>
     )

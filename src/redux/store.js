@@ -8,7 +8,24 @@ const initialState = {
     longBreak: 20,
     longBreakInterval: 4,
     periodCounter: 0,
-    state: 'pomodoro' // pomodoro | short | long
+    state: 'pomodoro', // pomodoro | short | long
+    toDos: [
+        {
+            id: 0,
+            isDone: true,
+            mission: "Học responsive"
+        },
+        {
+            id: 1,
+            isDone: true,
+            mission: "Học Webpack"
+        },
+        {
+            id: 2,
+            isDone: true,
+            mission: "Học Redux"
+        }
+    ]
 }
 
 
@@ -40,6 +57,23 @@ const reducer = (state = initialState, action) => {
             ...state,
             state: action.value
         }
+
+        case 'ADDTODO': return {
+            ...state,
+            state: action.value
+        }
+
+        case 'DELETETODO': return {
+            ...state,
+            state: action.value
+        }
+        case 'SETSTATETODO': 
+            let newToDos = state.toDos
+            newToDos[action.id].isDone = action.value
+            return {
+                ...state,
+                toDos: newToDos
+            }
         default:
             return state;
     }

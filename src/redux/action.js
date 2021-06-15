@@ -39,3 +39,26 @@ export const setState = (value) => {
         value: value,
     }
 }
+
+export const addTodo = (value) => {
+    return {
+        type: 'ADDTODO',
+        value: value,
+    }
+}
+
+
+export const deleteTodo = (value) => {
+    return {
+        type: 'DELETETODO',
+        value: value,
+    }
+}
+
+export const setStateTodo = (id,value) => {
+    return {
+        type: 'SETSTATETODO',
+        id: id,
+        value: value,
+    }
+}

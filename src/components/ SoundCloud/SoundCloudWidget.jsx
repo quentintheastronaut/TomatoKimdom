@@ -7,7 +7,7 @@ function SoundCloudWidget() {
         <div className="SoundCloudWidget">   
             <ReactPlayer
                 url="https://soundcloud.com/le-hoang-phuc-646298054/vtv-o-nha-1m-ep05-imma-heartbreaker"
-                width="400px"
+                width="350px"
                 height="125px"
             />
         </div>

@@ -1,0 +1,20 @@
+.Mission-wrapper {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 10px 0px;
+
+    font-size: 18px;
+    text-align: left;
+}
+
+
+.Mission-content {
+    text-decoration: line-through;
+}

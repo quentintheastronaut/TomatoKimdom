@@ -1,0 +1,12 @@
+.Missions-wrapper {
+    width: 80%;
+}
+
+.title {
+    font-size: 40px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+}

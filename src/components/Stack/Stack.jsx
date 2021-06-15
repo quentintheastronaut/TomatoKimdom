@@ -25,8 +25,6 @@ function Stack() {
                 {
                     arr.map( item => item)
                 }
-                
-                
             </div>
             
             
