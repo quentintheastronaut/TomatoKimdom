@@ -53,6 +53,17 @@
     flex-wrap: wrap;
 }
 
+@media only screen and (max-width){
+    .navigation 
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
 @keyframes fadeIn {
     from {
         transform: translateY(-25px);
