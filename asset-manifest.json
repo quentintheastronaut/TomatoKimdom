@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/TomatoKingdom/static/css/main.872152db.chunk.css",
-    "main.js": "/TomatoKingdom/static/js/main.7e35181a.chunk.js",
-    "main.js.map": "/TomatoKingdom/static/js/main.7e35181a.chunk.js.map",
-    "runtime-main.js": "/TomatoKingdom/static/js/runtime-main.d502d5a5.js",
-    "runtime-main.js.map": "/TomatoKingdom/static/js/runtime-main.d502d5a5.js.map",
-    "static/js/2.a5be962d.chunk.js": "/TomatoKingdom/static/js/2.a5be962d.chunk.js",
-    "static/js/2.a5be962d.chunk.js.map": "/TomatoKingdom/static/js/2.a5be962d.chunk.js.map",
-    "static/js/3.86bd5f4d.chunk.js": "/TomatoKingdom/static/js/3.86bd5f4d.chunk.js",
-    "static/js/3.86bd5f4d.chunk.js.map": "/TomatoKingdom/static/js/3.86bd5f4d.chunk.js.map",
+    "main.css": "/TomatoKingdom/static/css/main.1780931b.chunk.css",
+    "main.js": "/TomatoKingdom/static/js/main.05c158e2.chunk.js",
+    "main.js.map": "/TomatoKingdom/static/js/main.05c158e2.chunk.js.map",
+    "runtime-main.js": "/TomatoKingdom/static/js/runtime-main.ab7c8e68.js",
+    "runtime-main.js.map": "/TomatoKingdom/static/js/runtime-main.ab7c8e68.js.map",
+    "static/js/2.da4ab513.chunk.js": "/TomatoKingdom/static/js/2.da4ab513.chunk.js",
+    "static/js/2.da4ab513.chunk.js.map": "/TomatoKingdom/static/js/2.da4ab513.chunk.js.map",
+    "static/js/3.138bfd74.chunk.js": "/TomatoKingdom/static/js/3.138bfd74.chunk.js",
+    "static/js/3.138bfd74.chunk.js.map": "/TomatoKingdom/static/js/3.138bfd74.chunk.js.map",
     "index.html": "/TomatoKingdom/index.html",
-    "static/css/main.872152db.chunk.css.map": "/TomatoKingdom/static/css/main.872152db.chunk.css.map",
-    "static/js/2.a5be962d.chunk.js.LICENSE.txt": "/TomatoKingdom/static/js/2.a5be962d.chunk.js.LICENSE.txt",
+    "static/css/main.1780931b.chunk.css.map": "/TomatoKingdom/static/css/main.1780931b.chunk.css.map",
+    "static/js/2.da4ab513.chunk.js.LICENSE.txt": "/TomatoKingdom/static/js/2.da4ab513.chunk.js.LICENSE.txt",
     "static/media/App.css": "/TomatoKingdom/static/media/bg.465a5482.jpg",
     "static/media/ding.658f4412.mp3": "/TomatoKingdom/static/media/ding.658f4412.mp3",
     "static/media/flag.89b3f41f.png": "/TomatoKingdom/static/media/flag.89b3f41f.png",
     "static/media/tomato-5.641c9480.png": "/TomatoKingdom/static/media/tomato-5.641c9480.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d502d5a5.js",
-    "static/js/2.a5be962d.chunk.js",
-    "static/css/main.872152db.chunk.css",
-    "static/js/main.7e35181a.chunk.js"
+    "static/js/runtime-main.ab7c8e68.js",
+    "static/js/2.da4ab513.chunk.js",
+    "static/css/main.1780931b.chunk.css",
+    "static/js/main.05c158e2.chunk.js"
   ]
 }
