@@ -7,7 +7,7 @@ import flag from '../assets/img/flag.png'
 
 function Missions() {
 
-    const todos = useSelector((state) => state.toDos)
+    const todos = useSelector((state) => state.todos)
     const period = useSelector((state) => state.period)
 
     const dispatch = useDispatch();
@@ -30,27 +30,6 @@ function Missions() {
                 }
             </div>
 
-            {/* <div>
-                {
-                    todos.map((todo) => todo.isDone === true ? "true" : "false")
-                }
-
-                {
-                    todos[0].isDone === true ? "true " : "false "
-                }
-                {
-                    todos[1].isDone === true ? "true " : "false "
-                }
-                {
-                    todos[2].isDone === true ? "true " : "false "
-                }
-            </div> */}
-
-            <div>
-                {
-                    period
-                }
-            </div>
         </div>
     )
 }

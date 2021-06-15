@@ -40,25 +40,24 @@ export const setState = (value) => {
     }
 }
 
-export const addTodo = (value) => {
+export const addTodo = (todoText) => {
     return {
-        type: 'ADDTODO',
-        value: value,
+        type: 'todos/add',
+        payload: todoText,
     }
 }
 
 
-export const deleteTodo = (value) => {
+export const deleteTodo = (todoId) => {
     return {
-        type: 'DELETETODO',
-        value: value,
+        type: 'todos/delete',
+        payload: todoId
     }
 }
 
-export const setStateTodo = (id,value) => {
+export const setStateTodo = (todoId) => {
     return {
-        type: 'SETSTATETODO',
-        id: id,
-        value: value,
+        type: 'todos/setDone',
+        payload: todoId
     }
 }

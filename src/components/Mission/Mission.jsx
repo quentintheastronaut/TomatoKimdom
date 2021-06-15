@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import './Mission.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 Mission.propTypes = {
     onChange : PropTypes.func,
@@ -21,7 +23,7 @@ function Mission(props) {
 
     function handleChange(e){
         if(onChange){
-            onChange(mission.id,!mission.isDone)
+            onChange(mission.id,!mission.completed)
         }
     }
 
@@ -29,9 +31,9 @@ function Mission(props) {
         <div className="Mission">
             <div className="Mission-wrapper">
                 <div>{mission.id}</div>
-                <div className="Mission-content" style={ mission.isDone === false ? {} : {textDecoration: "line-through"}}>{mission.mission}</div>
+                <div className="Mission-content" style={ mission.completed === false ? {} : {textDecoration: "line-through"}}>{mission.text}</div>
                 {/* <input type="checkbox" onChange={handleChange}/> */}
-                <button onClick={handleChange}>Cick me</button>
+                <button className="CheckButton" onClick={handleChange}>{mission.completed === false ? "" : <FontAwesomeIcon icon={faCheck} color="green"/>}</button>
             </div>
         </div>
     )

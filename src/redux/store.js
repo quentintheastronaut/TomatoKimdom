@@ -2,6 +2,11 @@ import { createStore } from 'redux'
 
 // initial State 
 
+function nextTodoId(todos) {
+    const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
+    return maxId + 1
+  }
+
 const initialState = {
     period: 50,
     shortBreak: 10,
@@ -9,23 +14,15 @@ const initialState = {
     longBreakInterval: 4,
     periodCounter: 0,
     state: 'pomodoro', // pomodoro | short | long
-    toDos: [
-        {
-            id: 0,
-            isDone: true,
-            mission: "Học responsive"
-        },
-        {
-            id: 1,
-            isDone: true,
-            mission: "Học Webpack"
-        },
-        {
-            id: 2,
-            isDone: true,
-            mission: "Học Redux"
-        }
-    ]
+    todos: [
+        { id: 0, text: 'Learn React', completed: true },
+        { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
+        { id: 2, text: 'Build something fun!', completed: false, color: 'blue' }
+    ],
+    filters: {
+        status: 'Active',
+        colors: ['red', 'blue']
+      }
 }
 
 
@@ -58,22 +55,37 @@ const reducer = (state = initialState, action) => {
             state: action.value
         }
 
-        case 'ADDTODO': return {
-            ...state,
-            state: action.value
-        }
-
-        case 'DELETETODO': return {
-            ...state,
-            state: action.value
-        }
-        case 'SETSTATETODO': 
-            let newToDos = state.toDos
-            newToDos[action.id].isDone = action.value
+        case 'todos/add': 
             return {
                 ...state,
-                toDos: newToDos
+                todos: [
+                    ...state.todos,
+                    {
+                        id: nextTodoId(state.todos),
+                        text: action.payload,
+                        completed: false
+                      }
+                ]
             }
+
+        case 'todos/setDone': 
+            return {
+                ...state,
+                todos: state.todos.map(todo => {
+                if (todo.id !== action.payload) {
+                    return todo
+                }
+                return {
+                    ...todo,
+                    completed: !todo.completed
+                }
+            })
+          }
+        case 'todos/delete': 
+            return {
+                ...state,
+                todos: state.todos.filter(todo => todo.id !== action.payload)
+        }
         default:
             return state;
     }
