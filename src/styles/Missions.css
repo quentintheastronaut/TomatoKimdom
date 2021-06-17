@@ -1,5 +1,5 @@
 .Missions-wrapper {
-    width: 80%;
+    width: 90%;
 }
 
 .title {
@@ -9,4 +9,11 @@
     flex-direction: row;
     justify-content: center;
     align-items: baseline;
+}
+
+.Missions-nav {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }

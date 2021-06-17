@@ -15,9 +15,9 @@ const initialState = {
     periodCounter: 0,
     state: 'pomodoro', // pomodoro | short | long
     todos: [
-        { id: 0, text: 'Learn React', completed: true },
-        { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
-        { id: 2, text: 'Build something fun!', completed: false, color: 'blue' }
+        { id: 0, text: 'Learn React', completed: true , color: '#e0544c' },
+        { id: 1, text: 'Learn Redux', completed: false, color: '#e0544c' },
+        { id: 2, text: 'Build something fun!', completed: false, color: '#e0544c' }
     ],
     filters: {
         status: 'Active',
@@ -63,7 +63,8 @@ const reducer = (state = initialState, action) => {
                     {
                         id: nextTodoId(state.todos),
                         text: action.payload,
-                        completed: false
+                        completed: false,
+                        color: '#e0544c'
                       }
                 ]
             }
